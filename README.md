@@ -5,7 +5,7 @@ A responsive E-Commerce frontend built using React and Vite. The application all
 
 ## Live Demo
 
-https://your-vercel-link.vercel.app
+https://sprint-6-4fwr.vercel.app/
 
 
 ## Features
