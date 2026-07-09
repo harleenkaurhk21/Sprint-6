@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 function Home() {
   return (
     <div className="home">
-       <img src="hero.jpg" alt="hero">
+      <img src="/hero.jpg" alt="Hero" className="hero-image" />
 
       <div className="hero">
         <h1>Welcome to ReactShop 🛍️</h1>
