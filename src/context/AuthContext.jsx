@@ -3,23 +3,23 @@ import { createContext, useContext, useEffect, useState } from "react";
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  // Load login status from localStorage
+ 
   const [isLoggedIn, setIsLoggedIn] = useState(() => {
     const savedStatus = localStorage.getItem("isLoggedIn");
     return savedStatus ? JSON.parse(savedStatus) : false;
   });
 
-  // Save login status whenever it changes
+ 
   useEffect(() => {
     localStorage.setItem("isLoggedIn", JSON.stringify(isLoggedIn));
   }, [isLoggedIn]);
 
-  // Login as Guest
+
   const login = () => {
     setIsLoggedIn(true);
   };
 
-  // Logout
+
   const logout = () => {
     setIsLoggedIn(false);
   };
@@ -37,5 +37,4 @@ export const AuthProvider = ({ children }) => {
   );
 };
 
-// Custom Hook
 export const useAuth = () => useContext(AuthContext);
