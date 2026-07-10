@@ -6,7 +6,7 @@ function Navbar() {
   const { cart } = useCart();
   const { isLoggedIn, logout } = useAuth();
 
-  // Total quantity of items in cart
+
   const cartCount = cart.reduce((total, item) => {
     return total + item.quantity;
   }, 0);
