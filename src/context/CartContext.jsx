@@ -3,18 +3,17 @@ import { createContext, useContext, useEffect, useState } from "react";
 const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
-  // Load cart from localStorage when app starts
+
   const [cart, setCart] = useState(() => {
     const savedCart = localStorage.getItem("cart");
     return savedCart ? JSON.parse(savedCart) : [];
   });
 
-  // Save cart whenever it changes
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
 
-  // Add product to cart
+  
   const addToCart = (product) => {
     const existingProduct = cart.find((item) => item.id === product.id);
 
@@ -31,7 +30,7 @@ export const CartProvider = ({ children }) => {
     }
   };
 
-  // Remove product from cart
+
   const removeFromCart = (id) => {
     setCart(cart.filter((item) => item.id !== id));
   };
@@ -49,5 +48,5 @@ export const CartProvider = ({ children }) => {
   );
 };
 
-// Custom Hook
+
 export const useCart = () => useContext(CartContext);
